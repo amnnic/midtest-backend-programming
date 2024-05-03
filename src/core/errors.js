@@ -52,6 +52,11 @@ const errorTypes = {
     status: 403,
     code: 'FORBIDDEN_ERROR',
   },
+  TOO_MANY_FAILED_ATTEMPTS: {
+    description: 'Too many failed login attempts.',
+    status: 403,
+    code: 'FORBIDDEN_ERROR',
+  },
   NO_ANONYMOUS_ACCESS: {
     description: 'Access denied. No anonymous access',
     status: 403,
