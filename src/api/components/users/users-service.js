@@ -5,20 +5,15 @@ const { hashPassword, passwordMatched } = require('../../../utils/password');
  * Get list of users
  * @returns {Array}
  */
-async function getUsers() {
-  const users = await usersRepository.getUsers();
+async function getUsers({ page_number, page_size, sort, search }) {
+  const users = await usersRepository.getUsers({
+    page_number,
+    page_size,
+    sort,
+    search,
+  });
 
-  const results = [];
-  for (let i = 0; i < users.length; i += 1) {
-    const user = users[i];
-    results.push({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-    });
-  }
-
-  return results;
+  return users;
 }
 
 /**
